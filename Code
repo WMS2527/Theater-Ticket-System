@@ -25,7 +25,6 @@ def buySeat():
 def soldOut():
     two_d_array.fill(00)
     printTable(two_d_array)
-    print("SOLD OUT")
 
 def printTable(two_d_array):
     print(two_d_array)
@@ -39,3 +38,7 @@ while True:
         buySeat()
     elif method == 0:
         soldOut()
+        
+    if (two_d_array==0).all():
+        print("SOLD OUT")
+        exit()
