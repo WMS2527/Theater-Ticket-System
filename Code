@@ -1,5 +1,6 @@
 import numpy as np
 
+#Function for buying one seat at a time.
 def buySeat():
     column = int(input("Enter the column number: "))
     row = int(input("Enter the row number: "))
@@ -22,10 +23,12 @@ def buySeat():
     two_d_array[row][column-1] = 00
     printTable(two_d_array)
     
+#Function for buying every seat at once.
 def soldOut():
     two_d_array.fill(00)
     printTable(two_d_array)
 
+#Function for printing seat array
 def printTable(two_d_array):
     print(two_d_array)
 data = [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 20, 20, 20, 20, 20, 20, 20, 10], [20, 30, 30, 30, 30, 30, 30, 30, 20], [30, 40, 40, 40, 40, 40, 40, 40, 30], [30, 40, 40, 50, 50, 50, 40, 40, 30]
@@ -33,12 +36,15 @@ two_d_array = np.array(data)
 print(“Theater Ticket Purchase”)
 printTable(two_d_array)
 while True:
+    #If 1 is inputted, function buySeat is run.
+    #If 0 is inputted, function soldOut is run.
     method = int(input("Enter 1 to buy a seat. Enter 0 to sell out all seats."))
     if method == 1:
         buySeat()
     elif method == 0:
         soldOut()
         
+    #Checks if all seats have been purchased. If true, the program stops.
     if (two_d_array==0).all():
         print("SOLD OUT")
         exit()
