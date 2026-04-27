@@ -29,13 +29,17 @@ def soldOut():
     printTable(two_d_array)
 
 #Function for printing seat array
+seatsRemain = True
+
 def printTable(two_d_array):
     print(two_d_array)
 data = [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 20, 20, 20, 20, 20, 20, 20, 10], [20, 30, 30, 30, 30, 30, 30, 30, 20], [30, 40, 40, 40, 40, 40, 40, 40, 30], [30, 40, 40, 50, 50, 50, 40, 40, 30]
 two_d_array = np.array(data)
 print(“Theater Ticket Purchase”)
 printTable(two_d_array)
-while True:
+
+
+while (seatsRemain == True):
     #If 1 is inputted, function buySeat is run.
     #If 0 is inputted, function soldOut is run.
     method = int(input("Enter 1 to buy a seat. Enter 0 to sell out all seats."))
@@ -43,8 +47,10 @@ while True:
         buySeat()
     elif method == 0:
         soldOut()
-        
-    #Checks if all seats have been purchased. If true, the program stops.
     if (two_d_array==0).all():
-        print("SOLD OUT")
-        exit()
+        seatsRemain = False
+
+else:
+    #Checks if all seats have been purchased. If true, the program stops.
+    print("SOLD OUT")
+    exit()
