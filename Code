@@ -20,7 +20,7 @@ def buySeat():
         row = 6
     elif row == 8:
         row = 7
-    print(f"Thank you for purchasing this seat ({row_input}:{column})")
+    print(f"Thank you for purchasing this seat,{row_input},{column})
     print("Cost of Seat: ", two_d_array[row][column-1])
     two_d_array[row][column-1] = 00
     printTable(two_d_array)
