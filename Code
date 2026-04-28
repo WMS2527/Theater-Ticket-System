@@ -20,6 +20,7 @@ def buySeat():
         row = 1
     elif row == 8:
         row = 0
+    print("Cost of Seat: ", two_d_array[row][column-1])
     two_d_array[row][column-1] = 00
     printTable(two_d_array)
     
@@ -33,13 +34,13 @@ seatsRemain = True
 
 def printTable(two_d_array):
     for row in two_d_array:
-        print(' '.join([f'${cell}' for cell in row]))
+        print(' '.join([f' X ' if cell == 0 else f'${cell}' for cell in row]))
 data = [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 10, 10, 10, 10, 10, 10, 10, 10], [10, 20, 20, 20, 20, 20, 20, 20, 10], [20, 30, 30, 30, 30, 30, 30, 30, 20], [30, 40, 40, 40, 40, 40, 40, 40, 30], [30, 40, 40, 50, 50, 50, 40, 40, 30]
 two_d_array = np.array(data)
 np.set_printoptions(formatter={'all': lambda x: f'${x}'})
 print(“Theater Ticket Purchase”)
 for row in two_d_array:
-    print(' '.join([f'${cell}' for cell in row]))
+    print(' '.join([f' X ' if cell == 0 else f'${cell}' for cell in row]))
 
 while (seatsRemain == True):
     #If 1 is inputted, function buySeat is run.
